@@ -1,3 +1,0 @@
-'atom-workspace atom-text-editor:not([mini])':
-  'alt-shift-up': 'editor:move-line-up'
-  'alt-shift-down': 'editor:move-line-down'
