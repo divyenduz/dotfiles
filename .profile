@@ -1,14 +1,17 @@
+echo "Loading .profile"
 PS1='\u [\W]$ '
 open_vscode(){
 	/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron $1&
 }
 
-alias Code=open_vscode
+alias code=open_vscode
 
 export ANDROID_HOME=/Users/divyendusingh/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/Users/divyendusingh/Documents/software/google-cloud-sdk/bin
+export PATH=$PATH:/Users/divyendusingh/Documents/software
+export PATH=$PATH:/Users/divyendusingh/Documents/software/nvim-osx64/bin
 
 alias c='clear'
 alias gpom='git pull origin master'
@@ -43,25 +46,6 @@ git_sync() {
 	git checkout master && git pull origin master && git checkout $1 && git merge master
 }
 alias gsy=git_sync
-
-vm_core() {
-	if [ "$*" == "" ]; then
-		VBoxManage startvm ubuntu14 --type=headless	
-	fi
-
-	if [ "$1" == "start"  ]; then
-		VBoxManage startvm ubuntu14 --type=headless
-	fi
-
-	if [ "$1" == "stop" ]; then
-		VBoxManage controlvm ubuntu14 acpipowerbutton
-	fi
-
-	if [ "$1" == "ssh" ]; then
-		ssh -p 2222 divyendu@localhost
-	fi
-}
-alias vm=vm_core
 
 alias nginx-conf='vi /usr/local/etc/nginx/nginx.conf'
 
@@ -108,3 +92,12 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 alias ll='ls -lrt'
+
+nvm use default
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH="$HOME/.cargo/bin:$PATH"
