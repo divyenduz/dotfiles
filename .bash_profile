@@ -1,4 +1,4 @@
-echo "Loading .bash_profile, remember z, tokei, fd, fselect, thefuck, rg"
+echo "Loading .bash_profile, remember z, tokei, fd, fselect, thefuck, rg, npkill"
 
 if [ -n "$ZSH_VERSION" ]; then
   PS1='%n [%1~]$ '
