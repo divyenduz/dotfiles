@@ -44,6 +44,8 @@ alias gpom='git pull origin master'
 # Get the current git branch name
 alias gbn='git rev-parse --abbrev-ref HEAD'
 
+alias gh='cd $(git rev-parse --show-toplevel)'
+
 # Push current branch to origin
 alias gpoc='git push origin $(gbn)'
 
