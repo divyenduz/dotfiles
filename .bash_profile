@@ -1,4 +1,4 @@
-echo "Loading .bash_profile, remember z, tokei, fd, fselect, thefuck, rg, npkill"
+echo "Loading .bash_profile, remember z, tokei, fd, fselect, thefuck, rg, npkill, fx"
 
 if [ -n "$ZSH_VERSION" ]; then
   PS1='%n [%1~]$ '
@@ -6,7 +6,9 @@ else
   PS1='$ [\W]$ '
 fi
 
-alias ssh-hz='ssh -i ~/Documents/keys/hz-office root@78.47.225.20'
+vman() { vim <(man $1); }
+
+alias ssh-hl='ssh root@95.216.182.244'
 alias ssh-sovtech='ssh -i ~/Documents/keys/divy-sovtech.pem ec2-user@3.248.183.23' 
 
 removecontainers() {
