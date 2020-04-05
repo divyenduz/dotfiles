@@ -32,6 +32,7 @@ docker-wipe() {
 alias lprisma='node /Users/divyendusingh/Documents/prisma/prisma/cli/packages/prisma-cli/dist/index.js'
 alias lprisma2='node /Users/divyendusingh/Documents/prisma/prisma2/cli/prisma2/build/index.js' 
 
+export PATH="/Users/divyendusingh/.deno/bin:$PATH"
 if [ -d "$HOME/Documents/software" ] ; then
   PATH="$PATH:$HOME/Documents/software"
 fi
