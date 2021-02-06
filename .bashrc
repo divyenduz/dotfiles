@@ -18,3 +18,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [ -f /Users/divyendusingh/Documents/projects/zoid/footyboy/node_modules/tabtab/.completions/slss.bash ] && . /Users/divyendusingh/Documents/projects/zoid/footyboy/node_modules/tabtab/.completions/slss.bash
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+complete -C /Users/divyendusingh/Documents/software/terraform terraform

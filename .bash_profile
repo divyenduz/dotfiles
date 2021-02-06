@@ -1,15 +1,18 @@
-echo "Loading .bash_profile, remember z, tokei, fd, fselect, thefuck, rg, npkill, fx, dust, xsv"
+echo "Loading .bash_profile, remember tokei, fd, fselect, thefuck, rg, npkill, fx, dust, xsv, geokit"
+
+kcc=$(kubectl config current-context)
+echo "k8s context: $kcc"
 
 if [ -n "$ZSH_VERSION" ]; then
-  PS1='%n [%1~]$ '
+  PS1='%n $ [%1~]$ '
 else
   PS1='$ [\W]$ '
 fi
 
 vman() { vim <(man $1); }
 
-alias ssh-hl='ssh root@95.216.182.244'
-alias ssh-sovtech='ssh -i ~/Documents/keys/divy-sovtech.pem ec2-user@3.248.183.23' 
+alias ssh-pi='ssh pi@darth.pi'
+alias ssh-retro='ssh pi@retro.pi'
 
 removecontainers() {
   docker stop $(docker ps -aq)
@@ -29,15 +32,10 @@ docker-wipe() {
   docker rm $(docker ps -aq)
 }
 
-alias lprisma='node /Users/divyendusingh/Documents/prisma/prisma/cli/packages/prisma-cli/dist/index.js'
-alias lprisma2='node /Users/divyendusingh/Documents/prisma/prisma2/cli/prisma2/build/index.js' 
-
 export PATH="/Users/divyendusingh/.deno/bin:$PATH"
 if [ -d "$HOME/Documents/software" ] ; then
   PATH="$PATH:$HOME/Documents/software"
 fi
-# alias ngrok='/Users/divyendusingh/Documents/software/ngrok'
-# alias packer='/Users/divyendusingh/Documents/software/packer'
 
 alias c='clear'
 alias gpom='git pull origin master'
@@ -49,7 +47,6 @@ alias gh='cd $(git rev-parse --show-toplevel)'
 
 # Push current branch to origin
 alias gpoc='git push origin $(gbn)'
-
 
 alias ga='git add -A .'
 alias gs='git status'
@@ -86,3 +83,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
